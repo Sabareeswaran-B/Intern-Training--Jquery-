@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Animation</title>
+    <script>
+        $(document).ready(() => {
+            $("#start").click(() => {
+                $(".box1").animate({
+                    left: "300px",
+                    height: "150px",
+                    width: "150px",
+                }).css("backgroundColor", "red");
+                $(".box2").animate({
+                    left: "0px",
+                    height: "150px",
+                    width: "150px",
+                }).css("backgroundColor", "red");
+            })
+            $("#restart").click(() => {
+                $(".box1").animate({
+                    left: "0px",
+                    height: "50px",
+                    width: "50px",
+                }).css("backgroundColor", "yellow");
+                $(".box2").animate({
+                    left: "350px",
+                    height: "50px",
+                    width: "50px",
+                }).css("backgroundColor", "yellow");
+            })
+        });
+    </script>
+    <style>
+        .box1 {
+            background-color: yellow;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            text-align: center;
+        }
+
+        .box2 {
+            background-color: yellow;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            left: 350px;
+            text-align: center;
+        }
+
+        #start {
+            margin-top: 175px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heading">
+        <h1>Pink frag event organizer</h1>
+    </div>
+
+    <div class="box1">
+        box 1
+    </div>
+
+    <div class="box2">
+        box 2
+    </div>
+
+    <button id="start">
+        animate
+    </button>
+
+    <button id="restart">
+        reanimate
+    </button>
+
+
+</body>
+
+</html>

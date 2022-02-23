@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manupulation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#after").click(function () {
+                $("#div2").after('<div style="background-color:yellow" class="div3"> after div </div>');
+            });
+            $("#before").click(function () {
+                $("#div2").before('<div style="background-color:yellow" class="div4"> before div </div>');
+            });
+            $("#append").click(function () {
+                var val = $("#listVal").val();
+                $("#listVal").val("");
+                $("ol").append(`<li>${val}</li>`);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <h1>Demo: jQuery after() method </h1>
+
+    <div id="div1">div 1
+    </div>
+
+    <div id="div2">div 2
+    </div>
+
+    <p>List 1:</p>
+    <ol>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ol>
+
+    <button id="after">Add After</button>
+    <button id="before">Add Before</button><br><br>
+    <input placeholder="list value" id="listVal">
+    <button id="append">Append</button>
+</body>
+
+</html>

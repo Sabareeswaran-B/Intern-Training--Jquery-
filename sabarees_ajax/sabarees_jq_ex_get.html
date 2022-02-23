@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax get method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                method: "GET",
+                url: "https://foodie-backend-rvs.herokuapp.com/home/store",
+                success: function (result) {
+                    console.log(result);
+                    result.forEach(element => {
+                        $("#stores").append('<li name=' + element['_id'] + ' class="product">' + element['storeName'] + '</li>')
+                    });
+                }
+            });
+            $('li[class="product"]').click(() => {
+                var name = $(this).attr("name");
+                $.ajax({
+                    method: "GET",
+                    url: "https://foodie-backend-rvs.herokuapp.com/home/getProductsfromSingleStore/" + name,
+                    success: function (result) {
+                        console.log(result);
+                        result.forEach(element => {
+                            $("#products").append('<li name=' + element['_id'] + 'class="singleProduct">' + element['productName'] + '</li>')
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ol id="stores">
+
+    </ol>
+    <ol id="products">
+
+    </ol>
+
+</body>
+
+</html>

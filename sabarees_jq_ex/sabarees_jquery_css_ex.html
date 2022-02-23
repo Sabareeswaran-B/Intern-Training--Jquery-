@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {       
+            $("h1").mouseover(function () {
+                $(this).css("color", "blue");
+            });
+            $("h1").mouseout(function () {
+                $(this).css("color", "black");
+            });
+            $("button").click(function () {
+                $("p[class='firstParagraph']").addClass("redLetters");
+            });
+        });
+    </script>
+    <style>
+        .redLetters{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pink frag event organizer</h1>
+    <br>
+    <p class="firstParagraph">There is a marriage event today</p>
+    <br>
+    <p id="secondParagraph">There is a Corporate Event tomorrow</p>
+    <br>
+    <p>List 1:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+
+    <p>List 2:</p>
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Tea</li>
+    </ul>
+    <button>Click me</button>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+   $(document).ready(function(){
+
+      $("#btnDivStyle").click(function(){
+        alert($("div").attr("class"));
+      });
+
+      $("#btnPStyle").click(function(){
+       var style = $('p').prop('style');
+        alert(style.fontWeight); 
+      });
+    
+
+      $('div').prop('class','yellowDiv'); 
+   });
+</script>
+<style> 
+   .yellowDiv{
+      background-color:yellow;
+    }
+</style>
+</head>
+
+<body>
+	
+  <h1>Demo: jQuery attr() method</h1>
+  <button id="btnDivStyle">Get div class</button>
+  <button id="btnPStyle">Get p Style</button> </br></br>
+  <div>
+    This is div.
+  </div>
+  <p style="font-size:16px;font-weight:bold">
+    This is paragraph.
+  </p>
+  <div>
+    This is div.
+  </div>
+  <p style="color:red">
+    This is paragraph.
+  </p>
+
+</body>
+
+</html>
